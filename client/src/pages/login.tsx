@@ -30,7 +30,7 @@ export default function Login() {
   const [isRegister, setIsRegister] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
-  
+
   const form = useForm<z.infer<typeof registerSchema>>({
     resolver: zodResolver(isRegister ? registerSchema : loginSchema),
     defaultValues: {
@@ -48,7 +48,7 @@ export default function Login() {
         await api.register(values);
         toast({
           title: "Berhasil mendaftar!",
-          description: "Selamat datang di CreatorSpace",
+          description: "Selamat datang di CreatorID",
         });
       } else {
         await api.login({
@@ -75,7 +75,7 @@ export default function Login() {
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-black relative overflow-hidden">
       {/* Background Image with Overlay */}
-      <div 
+      <div
         className="absolute inset-0 z-0 opacity-60"
         style={{
           backgroundImage: `url(${bgImage})`,
@@ -93,7 +93,7 @@ export default function Login() {
         >
           <div className="mb-8 text-center">
             <h1 className="text-4xl font-display font-bold text-white mb-2 tracking-tight">
-              Creator<span className="text-primary">Space</span>
+              Creator<span className="text-primary">ID</span>
             </h1>
             <p className="text-white/60">Join the creative community</p>
           </div>
@@ -117,11 +117,11 @@ export default function Login() {
                         <FormControl>
                           <div className="relative">
                             <User className="absolute left-3 top-3 h-4 w-4 text-white/40" />
-                            <Input 
-                              placeholder="johndoe" 
-                              className="pl-9 bg-white/5 border-white/10 text-white placeholder:text-white/20 focus-visible:ring-primary" 
+                            <Input
+                              placeholder="johndoe"
+                              className="pl-9 bg-white/5 border-white/10 text-white placeholder:text-white/20 focus-visible:ring-primary"
                               data-testid="input-username"
-                              {...field} 
+                              {...field}
                             />
                           </div>
                         </FormControl>
@@ -139,12 +139,12 @@ export default function Login() {
                         <FormControl>
                           <div className="relative">
                             <Lock className="absolute left-3 top-3 h-4 w-4 text-white/40" />
-                            <Input 
+                            <Input
                               type="password"
-                              placeholder="******" 
-                              className="pl-9 bg-white/5 border-white/10 text-white placeholder:text-white/20 focus-visible:ring-primary" 
+                              placeholder="******"
+                              className="pl-9 bg-white/5 border-white/10 text-white placeholder:text-white/20 focus-visible:ring-primary"
                               data-testid="input-password"
-                              {...field} 
+                              {...field}
                             />
                           </div>
                         </FormControl>
@@ -152,7 +152,7 @@ export default function Login() {
                       </FormItem>
                     )}
                   />
-                  
+
                   {isRegister && (
                     <>
                       <FormField
@@ -164,11 +164,11 @@ export default function Login() {
                             <FormControl>
                               <div className="relative">
                                 <CreditCard className="absolute left-3 top-3 h-4 w-4 text-white/40" />
-                                <Input 
-                                  placeholder="12345678" 
-                                  className="pl-9 bg-white/5 border-white/10 text-white placeholder:text-white/20 focus-visible:ring-primary" 
+                                <Input
+                                  placeholder="12345678"
+                                  className="pl-9 bg-white/5 border-white/10 text-white placeholder:text-white/20 focus-visible:ring-primary"
                                   data-testid="input-nim"
-                                  {...field} 
+                                  {...field}
                                 />
                               </div>
                             </FormControl>
@@ -186,11 +186,11 @@ export default function Login() {
                             <FormControl>
                               <div className="relative">
                                 <BookOpen className="absolute left-3 top-3 h-4 w-4 text-white/40" />
-                                <Input 
-                                  placeholder="Informatics Engineering" 
-                                  className="pl-9 bg-white/5 border-white/10 text-white placeholder:text-white/20 focus-visible:ring-primary" 
+                                <Input
+                                  placeholder="Informatics Engineering"
+                                  className="pl-9 bg-white/5 border-white/10 text-white placeholder:text-white/20 focus-visible:ring-primary"
                                   data-testid="input-major"
-                                  {...field} 
+                                  {...field}
                                 />
                               </div>
                             </FormControl>
@@ -201,8 +201,8 @@ export default function Login() {
                     </>
                   )}
 
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     disabled={isLoading}
                     className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-6 mt-2 shadow-[0_0_20px_hsl(265,89%,66%,0.3)]"
                     data-testid="button-submit"

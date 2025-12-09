@@ -35,7 +35,7 @@ const MemoryStore = createMemoryStore(session);
 
 app.use(
     session({
-        secret: process.env.SESSION_SECRET || "creatorspace-secret-key-change-in-production",
+        secret: process.env.SESSION_SECRET || "creatorid-secret-key-change-in-production",
         resave: false,
         saveUninitialized: false,
         store: new MemoryStore({
